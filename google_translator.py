@@ -1,9 +1,11 @@
+#importing modules------------------------------------------------
 from tkinter import *
 import tkinter as tk
 from tkinter import ttk
 from PIL import ImageTk, Image #pip3 install pillow
 from googletrans import Translator #pip3 install googletrans
 from tkinter import messagebox
+#-----------------------------------------------------------------
 
 root = tk.Tk()
 root.title('Langauge Translator')
@@ -11,7 +13,7 @@ root.geometry('550x400')
 root.maxsize(550,400)
 root.minsize(550,400)
 
-
+#Translate function-------------------------------------------------
 def translate(): #to_translate
         language_1 = t1.get("1.0","end-1c")
         cl = choose_langauge.get()
@@ -22,7 +24,7 @@ def translate(): #to_translate
                 translator = Translator()
                 output = translator.translate(language_1, dest=cl)
                 t2.insert('end',output.text)
-
+#-----------------------------------------------------------------------
 def clear(): #to clear the area
         t1.delete(1.0,'end')
         t2.delete(1.0,'end')
